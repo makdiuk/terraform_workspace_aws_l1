@@ -17,7 +17,7 @@
 # in backend.tf.
 
 module "aws_naming" {
-  source      = "git@github.com:makdiuk/terraform_module_aws_naming.git"
+  source      = "github.com/makdiuk/terraform_module_aws_naming"
   solution    = "stacks"
   environment = "dev"
   region      = var.region
@@ -30,7 +30,7 @@ module "aws_naming" {
 }
 
 module "aws_vpc" {
-  source = "git@github.com:makdiuk/terraform_module_aws_vpc.git"
+  source = "github.com/makdiuk/terraform_module_aws_vpc"
   cidr   = "10.0.0.0/16"
   name   = module.aws_naming.name
   tags   = module.aws_naming.tags
